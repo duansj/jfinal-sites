@@ -14,8 +14,8 @@ import com.sites.controller.UserController;
 public class AdminRoutes extends Routes {
 	@Override
 	public void config() {
-		add("/admin", AdminController.class);
-		add("/admin/user", UserController.class);
-		add("/upload", UploadController.class);
+//		add("/admin", AdminController.class);
+//		add("/admin/user", UserController.class);
+//		add("/upload", UploadController.class);
 	}
 }

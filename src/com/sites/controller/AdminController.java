@@ -5,6 +5,7 @@ import com.alibaba.druid.util.Utils;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.jfinal.core.Controller;
 import com.jfinal.ext.interceptor.POST;
+import com.jfinal.kit.LogKit;
 import com.jfinal.log.Log;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.generator.Generator;
@@ -42,7 +43,8 @@ import java.util.UUID;
 public class AdminController extends Controller {
 
 	public void index() {
-		this.renderJsp("/admin/login.html");
+        LogKit.debug("this is adminController.index method");
+		login();
 	}
 
 
@@ -56,10 +58,11 @@ public class AdminController extends Controller {
 	}
 
 	public void login() {
+	    LogKit.debug("this is adminController.login method");
 		User user = getModel(User.class);
 		List<User> users = User.dao.find("select * from user where name = ? ", user.getName());
 		if (users.isEmpty()) {
-			index();
+			this.renderJsp("/admin/login.html");
 		} else {
 			this.renderJsp("/admin/index.html");
 		}

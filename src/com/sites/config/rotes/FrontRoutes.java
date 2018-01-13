@@ -13,6 +13,6 @@ import com.sites.controller.IndexController;
 public class FrontRoutes extends Routes{
 	@Override
 	public void config() {
-		add("/", IndexController.class);
+//		add("/", IndexController.class);
 	}
 }

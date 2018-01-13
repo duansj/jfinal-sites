@@ -6,6 +6,7 @@ Source Server Version : 50528
 Source Host           : 172.16.176.141:3306
 Source Database       : jfinal_sites
 
+
 Target Server Type    : MYSQL
 Target Server Version : 50528
 File Encoding         : 65001

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<meta charset="UTF-8">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>文档编辑页面</title>
+    <link rel="stylesheet" href="../common/editormd/css/editormd.min.css"/>
+</head>
+<body>
+<div id="layout">
+    <header>
+        <h1>编写文章</h1>
+        <p>编写文章内容.</p>
+    </header>
+    <form action="/admin/editarticle" method="post">
+
+        <div id="editormd">
+            <textarea id="my-editormd-doc" style="display:none;" name="my-editormd-doc">### hello editor.md</textarea>
+            <!-- 注意：name属性的值-->
+            <textarea id="my-editormd-html-code" name="content.context" style="display:none;"></textarea>
+        </div>
+
+        <div style="width:90%;margin: 10px auto;">
+            <input type="submit" name="submit" value="提交表单 Submit" style="padding: 5px;"/>
+        </div>
+    </form>
+</div>
+<script src="../common/editormd/examples/js/jquery.min.js"></script>
+<script src="../common/editormd/editormd.min.js"></script>
+<script type="text/javascript">
+    var editor = editormd({
+        width: "100%",
+        height: 640,
+        id: "editormd",
+        path: "../common/editormd/lib/",
+        flowChart: true,//流程图
+        sequenceDiagram: true, //时序图
+        tex: true, //科学公式
+        taskList: true,
+        emoji: true,//表情
+        /**上传图片相关配置如下*/
+        imageUpload: true,
+        imageFormats: ["jpg", "jpeg", "gif", "png"],
+        imageUploadURL: "/upload/editormdImage",//注意后端的上传图片服务地址
+        //跨域提交
+        crossDomainUpload: false,
+        uploadCallbackURL: "",
+        saveHTMLToTextarea: true //这个配置，方便post提交表单
+    });
+    // editor.getMarkdown();
+</script>
+</body>
+</html>

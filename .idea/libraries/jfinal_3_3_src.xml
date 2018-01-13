@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jfinal-3.3-src">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-3.3-src.jar!/" />
+    </SOURCES>
+  </library>
+</component>

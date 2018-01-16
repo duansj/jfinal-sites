@@ -4,19 +4,10 @@ package com.sites.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.jfinal.core.Controller;
 import com.jfinal.json.Json;
-import com.jfinal.kit.*;
-import com.jfinal.log.Log;
-import com.jfinal.render.FileRender;
+import com.jfinal.kit.LogKit;
 import com.jfinal.upload.UploadFile;
-import com.mchange.io.FileUtils;
 import com.sites.common.StaticContents;
-import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerFactory;
-import sun.security.pkcs11.wrapper.Constants;
 
-import javax.jnlp.FileSaveService;
-import java.io.File;
-import java.net.URL;
 import java.util.List;
 
 /**
@@ -48,7 +39,7 @@ public class UploadController extends Controller {
         String filename = uploadFile.getOriginalFileName();
         LogKit.debug("文件上传名称：" + filename);
         JSONObject res = new JSONObject();
-        res.put("url", "/" + filename);
+        res.put("url", "asd/" + filename);
         res.put("success", StaticContents.OK);
         res.put("message", StaticContents.OKMESSAGE);
         this.renderJson(res);

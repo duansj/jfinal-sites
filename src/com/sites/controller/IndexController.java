@@ -15,10 +15,16 @@ public class IndexController extends Controller {
 		this.render("index.jsp");
 	}
 
-	public void editor(){
+	public void editor() {
 		this.renderJsp("admin/editarticle.html");
 
+
 	}
+
+	public void article() {
+		this.renderJsp("admin/article.html");
+	}
+
 	public void sayHello() {
 		String userName = this.getPara("userName");
 		String sayHello = "hello" + userName + ",welcome to jfinal demo";

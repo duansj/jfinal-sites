@@ -875,55 +875,177 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="226" parent="5" name="content">
+    <table id="226" parent="5" name="t_case">
+      <Comment>案例表</Comment>
       <Engine>InnoDB</Engine>
     </table>
-    <table id="227" parent="5" name="user">
+    <table id="227" parent="5" name="t_case_evaluate">
+      <Comment>评价表</Comment>
       <Engine>InnoDB</Engine>
     </table>
-    <column id="228" parent="226" name="id">
+    <table id="228" parent="5" name="t_leave_message">
+      <Comment>留言表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="229" parent="5" name="t_rticle">
+      <Comment>文章表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="230" parent="5" name="t_user">
+      <Comment>用户表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="231" parent="226" name="id">
       <Position>1</Position>
       <DataType>varchar(32)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="229" parent="226" name="title">
+    <column id="232" parent="226" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="230" parent="226" name="context">
+    <column id="233" parent="226" name="picture">
       <Position>3</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(2000)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="231" parent="226" name="PRIMARY">
+    <column id="234" parent="226" name="context">
+      <Position>4</Position>
+      <DataType>varchar(2000)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="235" parent="226" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="232" parent="227" name="id">
+    <column id="236" parent="227" name="id">
       <Position>1</Position>
       <DataType>varchar(32)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="227" name="name">
+    <column id="237" parent="227" name="case_id">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(32)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="227" name="password">
+    <column id="238" parent="227" name="title">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="227" name="type">
+    <column id="239" parent="227" name="context">
+      <Position>4</Position>
+      <DataType>varchar(2000)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="240" parent="227" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="241" parent="228" name="id">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="242" parent="228" name="title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="243" parent="228" name="context">
+      <Position>3</Position>
+      <DataType>varchar(2000)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="244" parent="228" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="245" parent="229" name="id">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="246" parent="229" name="title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="247" parent="229" name="context">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="248" parent="229" name="classification">
+      <Position>4</Position>
+      <DataType>varchar(25)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="249" parent="229" name="category">
+      <Position>5</Position>
+      <DataType>varchar(25)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="250" parent="229" name="type">
+      <Position>6</Position>
+      <DataType>varchar(25)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="251" parent="229" name="create_time">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="252" parent="229" name="update_time">
+      <Position>8</Position>
+      <DataType>timestamp|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="253" parent="229" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="254" parent="230" name="id">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="255" parent="230" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="256" parent="230" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="257" parent="230" name="type">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="236" parent="227" name="PRIMARY">
+    <column id="258" parent="230" name="create_time">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="259" parent="230" name="update_time">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="260" parent="230" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

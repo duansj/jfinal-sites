@@ -1,22 +1,16 @@
 package com.sites.controller;
 
-import com.alibaba.druid.util.StringUtils;
-import com.alibaba.druid.util.Utils;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.jfinal.core.Controller;
-import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.LogKit;
 import com.jfinal.log.Log;
-import com.jfinal.plugin.activerecord.Db;
-import com.jfinal.plugin.activerecord.generator.Generator;
-import com.mysql.jdbc.Util;
-import com.sites.common.UUIDTool;
+import com.sites.common.Utils;
 import com.sites.model.Content;
+import com.sites.model.Rticle;
 import com.sites.model.User;
-import sun.security.util.KeyUtil;
+import com.sun.tools.javac.util.RichDiagnosticFormatter;
 
+import java.sql.Timestamp;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * 查询id值为25的User将其name属性改为James并更新到数据库
@@ -43,14 +37,20 @@ import java.util.UUID;
 public class AdminController extends Controller {
 
 	public void index() {
-        LogKit.debug("this is adminController.index method");
+		LogKit.debug("this is adminController.index method");
 		login();
 	}
 
 
 	public void editarticle() {
-		Content content = getModel(Content.class);
-		new Content().setContext(content.getContext()).setId(UUIDTool.getUUID()).save();
+		Rticle rticle = getModel(Rticle.class);
+		String title = rticle.getTitle();
+		String context = rticle.getContext();
+		String classification = rticle.getClassification();
+		String category = rticle.getCategory();
+		String type = rticle.getType();
+		Timestamp time = Utils.getTimestampTime();
+		new Rticle()._setAttrs(rticle.setId(Utils.getUUID()).setCreateTime(Utils.getTimestampTime())).save();
 	}
 
 	public void uploadImages() {
@@ -58,9 +58,9 @@ public class AdminController extends Controller {
 	}
 
 	public void login() {
-	    LogKit.debug("this is adminController.login method");
+		LogKit.debug("this is adminController.login method");
 		User user = getModel(User.class);
-		List<User> users = User.dao.find("select * from user where name = ? ", user.getName());
+		List<User> users = User.dao.find("select * from t_user where name = ? ", user.getName());
 		if (users.isEmpty()) {
 			this.renderJsp("/admin/login.html");
 		} else {
